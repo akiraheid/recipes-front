@@ -1,0 +1,17 @@
+.row.my-2
+	.col-auto.mr-auto
+		a#recipe-back-btn.btn.btn-secondary(href='#') <
+	.col-auto
+		a#recipe-edit-btn.btn.btn-secondary(href='#' onclick='app.showRecipeEditPage()') Edit
+
+.row: .col: h1#recipe-name
+
+.row.mb-2
+	.col-auto Servings
+	.col-auto.pl-0: input#recipe-servings(type='number' autocomplete='off'
+		min='1' step='1')
+
+.row: .col Ingredients
+.row: .col: ul#recipe-ingredients
+
+.row: .col#recipe-directions

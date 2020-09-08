@@ -1,0 +1,30 @@
+{
+	"name": "recipes-front",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node app.js",
+		"test": "nightwatch --headless tests/ui"
+	},
+	"author": "",
+	"ava": {
+		"files": [
+			"tests/unit/**/*"
+		]
+	},
+	"license": "GPL-3.0-only",
+	"dependencies": {
+		"bootstrap": "^4.3.1",
+		"errorhandler": "^1.5.1",
+		"express": "^4.16.4",
+		"jquery": "^3.5.0",
+		"pug": "^2.0.4"
+	},
+	"main": "app.js",
+	"devDependencies": {
+		"geckodriver": "^1.19.1",
+		"nightwatch": "^1.3.4",
+		"webpack": "^4.42.1",
+		"webpack-cli": "^3.3.11"
+	}
+}

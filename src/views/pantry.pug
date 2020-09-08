@@ -1,0 +1,41 @@
+.row
+	.col.pr-0: input#filter.form-control(
+			type='text'
+			autocomplete='off'
+			onkeyup='app.onPantrySearch(event, this.value)'
+			placeholder='Search')
+
+	.col-auto: button#pantry-add-btn.btn.btn-secondary(onclick='app.showPantryAddPage()') +
+
+
+#pantry-item-list.mt-3 Loading pantry...
+
+
+#template-pantry-item.row.py-1.align-items-center.hover-row.d-none.pantry-item
+	.col
+		//- pt-2 so there's a bigger click area
+		.row.pt-2
+			.col.pantry-name.pantry-editable
+			.col.px-1.pantry-editable
+				span.pantry-amount
+				span.pantry-unit
+			.col.px-1.pantry-edit.input-group.d-none
+				input.pantry-edit-name.form-control(type='text' autocomplete='off')
+				input.pantry-edit-amount.form-control(type='number'
+					autocomplete='off')
+
+				select.pantry-edit-unit.form-control
+					-
+						let _units2 = ['cup', 'floz', 'g', 'gal', 'kg', 'lb', 'liter', 'oz', 'pint', 'quart', 'tbsp', 'tsp']
+
+					each unit in _units2
+						option(value=unit) #{unit}
+
+				.input-group-append
+					button.btn.btn-success.pantry-edit-confirm &#x2714;
+					button.btn.btn-danger.pantry-edit-cancel x
+
+		.row.py-0: small.col.pantry-expire.pantry-editable.d-none
+	.col-auto: .row.py-0
+		.col-auto: button.btn.btn-danger.pantry-delete x
+		.col-auto.pl-0.d-none: button.btn.btn-success.pantry-delete-confirm &#x2714;

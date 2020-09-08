@@ -1,0 +1,29 @@
+#template-ingredient-input.ingredient.mb-2
+	.form-row
+		.col
+			input#form-ingredient-name.name.form-control(type='text'
+
+				autocomplete='off' placeholder='Ingredient name')
+			#form-ingredient-name-help.invalid-feedback.d-none Cannot be empty
+
+		.col-auto: button.btn.btn-danger(type='button') Remove
+
+	.form-row
+		.col
+			input#form-ingredient-amount.amount.form-control(type='number'
+				autocomplete='off' min='0' step='0.01' placeholder='Amount')
+
+			#form-ingredient-amount-help.invalid-feedback.d-none Cannot be empty
+
+		.col: select.unit.form-control
+			-
+				let _units = ['cup', 'floz', 'g', 'gal', 'kg', 'lb', 'liter', 'oz', 'pint', 'quart', 'tbsp', 'tsp']
+
+			each unit in _units
+				option(value=unit) #{unit}
+
+	.form-row: .col: input.prep.form-control(type='text' autocomplete='off'
+		placeholder='Preparation')
+
+	.form-row: .col: input.note.form-control(type='text' autocomplete='off'
+		placeholder='Note')

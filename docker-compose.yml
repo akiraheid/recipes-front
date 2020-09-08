@@ -1,0 +1,15 @@
+version: '3'
+services:
+    recipes:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        command: ["node", "src/app.js"]
+        container_name: recipes-front
+        env_file: .env
+        environment:
+            - DATA_URL=$DATA_URL
+        image: recipes-front
+        ports:
+            - "8080:8080"
+        restart: unless-stopped

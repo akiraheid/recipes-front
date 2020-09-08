@@ -1,0 +1,43 @@
+doctype html
+html(lang='en')
+	head
+		title Recipes
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		link(rel='stylesheet' crossorigin='anonymous'
+			href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'
+			integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm')
+		link(rel='stylesheet' href='/dist/style.css')
+		script(type='application/javascript' src='/dist/app.js')
+		script.
+			const DATA_URL = '#{dataURL}'
+
+	body.bg-dark.text-white
+		.container
+			include ./parts/navbar
+
+			include ./parts/alert
+
+			#page-home.page
+				include ./home
+
+			#page-my-recipes.page.d-none
+				include ./myRecipes
+
+			#page-pantry.page.d-none
+				include ./pantry
+
+			#page-pantry-add.page.d-none
+				include ./pantryAdd
+
+			#page-recipe.page.d-none
+				include ./recipe
+
+			#page-profile.page.d-none
+				include ./profile
+
+			#page-recipe-form.page.d-none
+				include ./recipeForm
+
+		#templates.d-none
+			include ./parts/ingredientInput

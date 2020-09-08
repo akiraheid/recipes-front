@@ -1,0 +1,40 @@
+.row: .col
+	h1#profile-name
+	p This is the profile!
+
+
+//- Password change
+#change-pass-btn.row.justify-content-center.mt-3: .col-auto
+	button.btn.btn-light(onclick='app.showChangePass()') Change password
+
+form#change-pass-form.mt-3.d-none
+	.row: .col Change password
+	.row
+		input#change-pass-1.col.form-control(type='password' placeholder='New'
+			autocomplete='off' required)
+
+	.row
+		input#change-pass-2.col.form-control(type='password'
+			placeholder='Confirm' autocomplete='off' required)
+		#change-pass-2-help.invalid-feedback.d-none Password mismatch
+
+	.row.justify-content-center.mt-3
+		.col-auto
+			button#change-pass-submit-btn.btn.btn-light(
+				onclick='app.submitChangePass()') Change
+		.col-auto
+			button.btn.btn-danger(onclick='app.hideChangePass()') Close
+
+
+//- Logout
+.row.justify-content-center.mt-5: .col-auto
+	button.btn.btn-danger(onclick='app.logout()') Logout
+
+//- Delete account
+#profile-delete.row.justify-content-center.mt-5: .col-auto
+	button#profile-delete-btn.btn.btn-danger(onclick='app.confirmDeleteAccount()') Delete account
+#profile-delete-confirm-btns.mt-5.d-none
+	.row.justify-content-center: col-auto Are you sure?
+	.row.justify-content-center
+		.col-auto: button#profile-delete-confirm.btn.btn-success(onclick='app.deleteAccount()') Yes
+		.col-auto: button#profile-delete-cancel.btn.btn-light(onclick='app.resetDeleteAccount()') No

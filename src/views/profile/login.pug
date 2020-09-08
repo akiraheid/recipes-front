@@ -1,0 +1,12 @@
+.row: .col.input-group
+	.input-group-prepend: span.input-group-text Username
+	input#login-form-name.form-control(type='text' autocomplete='off' required)
+
+.row.mb-3: .col.input-group
+	.input-group-prepend: span.input-group-text Password
+	input#login-form-pass.form-control(type='password' autocomplete='off'
+		required)
+
+.row.align-items-center
+	.col-auto: button.btn.btn-success(onclick='app.login()') Log in
+	.col: #login-help.d-none Incorrect username/password

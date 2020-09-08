@@ -1,0 +1,20 @@
+//- Depends on the pug that includes this file to define a var called formType
+
+form
+	.form-row.mb-3: .col
+		input.form-control(id=formType + '-form-name' type='text'
+			autocomplete='off' placeholder='Recipe name')
+
+		.invalid-feedback.d-none(id=formType + '-form-name-help') Recipe name taken
+
+	.form-row: .col
+		div Ingredients
+		div(id=formType + '-form-ingredients')
+
+	.form-row: .col-auto
+		button.btn.btn-light(onclick='app.addIngredientInput(\'' + formType + '\')') + Ingredient
+
+	.form-row: .col
+		.input-group: label.w-100 Directions
+			textarea.form-control.w-100(id=formType + '-form-directions' autocomplete='off')
+			.invalid-feedback.d-none(id=formType + '-form-directions-help') Cannot be empty

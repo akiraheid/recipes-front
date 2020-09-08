@@ -1,0 +1,48 @@
+//- Back button
+.row.my-3: .col-auto.mr-auto
+	//- Click behavior set depending on context
+	button#recipe-form-back.btn.btn-secondary <
+
+
+form
+	.form-row.mb-3: .col
+		input#recipe-form-name.form-control(type='text' autocomplete='off'
+			placeholder='Recipe name')
+
+		#recipe-form-name-help.invalid-feedback.d-none Recipe name taken
+
+	.form-group.row.mb-3
+		label.col-form-label.col-auto.pr-2(for='recipe-form-servings') Servings
+		.col.pl-0: input#recipe-form-servings.form-control(type='number'
+			autocomplete='off' min='1' step='1' placeholder='1')
+
+	.form-row: .col
+		div Ingredients
+
+	#recipe-form-ingredients
+		#recipe-form-ingredients-help.invalid-feedback.d-none
+		//- Ingredients populated by JS
+
+	.form-row: .col
+		.input-group: label.w-100 Directions
+			textarea#recipe-form-directions.form-control.w-100(
+				autocomplete='off')
+
+			#recipe-form-directions-help.invalid-feedback.d-none Cannot be empty
+
+
+//- Save and reset button
+.row.justify-content-center.align-items-center
+	.col-auto: button#recipe-form-save.btn-lg.btn-secondary Save
+	.col-auto: button#recipe-form-reset.btn.btn-secondary Reset
+
+
+#template-ingredient-form.mb-2.d-none.form-row.ingredient
+	.col
+		input.form-control(type='text' autocomplete='off'
+			placeholder='1 cup onion, diced (some note)')
+
+		.ingredient-help.invalid-feedback.d-none Invalid ingredient format
+
+	.col-auto
+		button.btn.btn-danger(type='button') -

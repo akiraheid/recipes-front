@@ -1,0 +1,13 @@
+div(class='row mb-3')
+	div(class='col')
+		nav(class='nav nav-pills nav-fill')
+			a(id='profile-prompt-navbar-login' class='profile-nav nav-item nav-link active' onclick='app.switchProfilePrompt("login")' href='#') Login
+			a(id='profile-prompt-navbar-create' class='profile-nav nav-item nav-link' onclick='app.switchProfilePrompt("create")' href='#') Create account
+
+div(id='profile-prompt-login' class='page-profile-prompt row')
+	div(class='col')
+		include ./login
+
+div(id='profile-prompt-create' class='page-profile-prompt row d-none')
+	div(class='col')
+		include ./create

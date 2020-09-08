@@ -1,0 +1,15 @@
+#view-search
+	.row: .col
+		input#search.form-control(
+			type='text'
+			autocomplete='off'
+			onkeyup='app.onRecipeSearch(event, this.value)'
+			placeholder='Search'
+		)
+
+	.mt-3#searchResults
+
+	#template-search-result.row.py-1.hover-row.d-none: .col
+		span.font-weight-bold.recipe-name
+		span  - 
+		span.font-italic.recipe-author

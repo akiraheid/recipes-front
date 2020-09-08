@@ -1,0 +1,10 @@
+.row: .col.input-group
+	.input-group-prepend: span.input-group-text Username
+	input#create-form-name.form-control(type='text' autocomplete='off' required)
+
+.row.mb-3: .col.input-group
+	.input-group-prepend: span.input-group-text Password
+	input#create-form-pass.form-control(type='password'
+		autocomplete='off' required)
+
+.row: .col: button#create-form-btn.btn.btn-success(onclick='app.createAccount()') Create Account
