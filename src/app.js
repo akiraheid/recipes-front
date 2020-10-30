@@ -19,7 +19,7 @@ app.use(express.urlencoded())
 const page = pug.renderFile('./src/views/app.pug',
 	{
 		'cssURL': '/dist',
-		'dataURL': '/api',
+		'dataURL': DATA_URL,
 		'jsURL': '/dist',
 	})
 

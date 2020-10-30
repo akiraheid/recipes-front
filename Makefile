@@ -5,6 +5,7 @@ build: Dockerfile clean
 
 build-test: Dockerfile.test
 	docker build -t recipes-front-test -f Dockerfile.test .
+	docker build -t recipes-front-test-server -f Docerkfile.api-mock .
 
 clean:
 	-rm -rf node_modules
@@ -21,6 +22,7 @@ serve-down:
 	docker-compose down
 
 test: lint build serve build-test
-	docker run --rm --network=host -v ${pwd}/test/:/test/test/:ro recipes-api-test
+	docker-compose up -d -f dcompose-test.yml
+	docker run --rm --network=host -v ${pwd}/test/:/test/test/:ro recipes-front-test
 
 .PHONY: build clean lint serve setup

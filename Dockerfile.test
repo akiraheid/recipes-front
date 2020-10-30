@@ -1,0 +1,12 @@
+FROM node:10-alpine as test
+
+ENV NODE_ENV development
+
+RUN mkdir -p /test && chown -R node:node /test
+WORKDIR /test
+USER node
+
+ENTRYPOINT ["npx", "nightwatch", "--headless", "test"]
+
+COPY package*.json ./
+RUN npm i --only-dev

@@ -1,0 +1,23 @@
+{
+	"src_folders": ["tests/ui"],
+	"webdriver": {
+		"start_process": true,
+		"port": 4444,
+		"server_path": "node_modules/.bin/geckodriver"
+	},
+	"test_settings": {
+		"default": {
+			"desiredCapabilities": {
+				"browserName": "firefox",
+				"alwaysMatch": {
+					"moz:firefoxOptions": {
+						"args": ["-headless"]
+					}
+				}
+			},
+			"disable_colors": true,
+			"output_folder": "nightwatch_output"
+		}
+	},
+	"test_workers": false
+}

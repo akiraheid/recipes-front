@@ -6,6 +6,7 @@
 		"start": "node app.js",
 		"test": "nightwatch --headless tests/ui"
 	},
+	"main": "app.js",
 	"author": "",
 	"ava": {
 		"files": [
@@ -20,7 +21,6 @@
 		"jquery": "^3.5.0",
 		"pug": "^2.0.4"
 	},
-	"main": "app.js",
 	"devDependencies": {
 		"geckodriver": "^1.19.1",
 		"nightwatch": "^1.3.4",

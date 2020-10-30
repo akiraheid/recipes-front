@@ -1,7 +1,8 @@
 const path = require('path')
 
 module.exports = {
-	mode: 'production',
+	//mode: 'production',
+	mode: 'development',
 	entry: './src/public/js/app.js',
 	output: {
 		filename: 'app.js',

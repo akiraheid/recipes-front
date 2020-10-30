@@ -2,14 +2,14 @@ FROM node:10-alpine as builder
 
 RUN mkdir -p /build/dist
 WORKDIR /build
-COPY package*.json webpack.config.js ./
+COPY package*.json ./
 RUN npm i --only-dev
 
 COPY src/public/js/ src/public/js/
 COPY src/public/css/* dist/
 RUN npx webpack
 
-
+# App container build
 FROM node:10-alpine
 
 ARG BUILD_TYPE=production
